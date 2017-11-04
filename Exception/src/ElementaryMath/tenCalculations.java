@@ -1,5 +1,6 @@
 package ElementaryMath;
 import java.util.*;
+
 import javax.swing.*;
 public class tenCalculations {
 	private static final int DEFAULT_LOWERBOUND = 0;
@@ -58,9 +59,21 @@ public class tenCalculations {
 				b = temp;
 
 			}
-			String answer = JOptionPane.showInputDialog(null, "Calculate this "+ a + " "+list3.get(j)+" "+b);
+			boolean keepGoing = true;
+			int ans =0;
 			int result = operator(a, b, (char)list3.get(j));
-			int ans = Integer.parseInt(answer);
+			while(keepGoing){
+				String answer = JOptionPane.showInputDialog(null, "Calculate this "+ a + " "+list3.get(j)+" "+b);
+				try{
+					ans = Integer.parseInt(answer);
+					keepGoing = false;
+				}catch(NumberFormatException e){
+					JOptionPane.showMessageDialog(null, "'"+answer+ "' is invalid\n"+"Please enter digits only");
+					System.out.println(e.getMessage());
+					e.printStackTrace();
+				}
+			}
+			
 			//System.out.println(result + " " + ans);
 			j++;
 			if(ans == result){
