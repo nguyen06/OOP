@@ -10,6 +10,7 @@ public class test {
 		List list = new ArrayList();
 		guessGame newWord = new guessGame();
 		char[] pos = new char[newWord.getLength()];
+		char[] finalPos = new char[newWord.getLength()];
 		int count = 0;
 		for(int j=0; j < 10;j++){
 			Player2 ch = new Player2();
@@ -23,7 +24,6 @@ public class test {
 						System.out.println(list);
 						JOptionPane.showMessageDialog(null, "'"+(char)list.get(i)+ "' is already type, try again");
 						appear = true;
-						
 						count--;
 						break;
 					}
@@ -32,22 +32,31 @@ public class test {
 				
 			}
 			checkChar test = new checkChar();
-			int result = test.check(newWord, ch);
-			if(result != -1){
-				//store the char into the position array
-				pos[result] = newWord.getChar(result);
-				count++;
-				
+			pos = test.check(newWord, ch);
+			for(int i = 0; i < pos.length;i++){
+				if(pos[i] != '\0'){
+				 finalPos[i] = pos[i];
+				 count++;
+				}
 			}
+			
+			
+//			if(pos != null){
+//				//store the char into the position array
+//				pos[result] = newWord.getChar(result);
+//				count++;
+//				
+//			}
+			
 			for(int i=0; i < newWord.getLength(); i++){
-				if(pos[i] == '\0'){
+				if(finalPos[i] == '\0'){
 					System.out.print('_');
 				}else{
-					System.out.print(pos[i]);
+					System.out.print(finalPos[i]);
+					
 				}
 			}
 			System.out.println();
-			System.out.println("count: "+ count);
 			if(count == newWord.getLength()){
 				System.out.println("Congradualation, you got it.");
 				player1Win++;
@@ -59,11 +68,11 @@ public class test {
 		List list = new ArrayList();
 		guessGame newWord = new guessGame();
 		char[] pos = new char[newWord.getLength()];
+		char[] finalPos = new char[newWord.getLength()];
 		int count = 0;
 		for(int j=0; j < 10;j++){
 			Player2 ch = new Player2();
 			if(list.isEmpty()){
-				System.out.println("hahha");
 				list.add(ch.getCharacter());
 			}
 			else{
@@ -81,18 +90,28 @@ public class test {
 				
 			}
 			checkChar test = new checkChar();
-			int result = test.check(newWord, ch);
-			if(result != -1){
-				//store the char into the position array
-				pos[result] = newWord.getChar(result);
-				count++;
-				
+			pos = test.check(newWord, ch);
+			for(int i = 0; i < pos.length;i++){
+				if(pos[i] != '\0'){
+				 finalPos[i] = pos[i];
+				 count++;
+				}
 			}
+			
+			
+//			if(pos != null){
+//				//store the char into the position array
+//				pos[result] = newWord.getChar(result);
+//				count++;
+//				
+//			}
+			
 			for(int i=0; i < newWord.getLength(); i++){
-				if(pos[i] == '\0'){
+				if(finalPos[i] == '\0'){
 					System.out.print('_');
 				}else{
-					System.out.print(pos[i]);
+					System.out.print(finalPos[i]);
+					
 				}
 			}
 			System.out.println();
