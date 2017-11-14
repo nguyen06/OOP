@@ -13,22 +13,15 @@ public class test {
 		int count = 0;
 		for(int j=0; j < 10;j++){
 			Player2 ch = new Player2();
-			if(list.isEmpty()){
-				list.add(ch.getCharacter());
-			}
+			if(list.isEmpty()) list.add(ch.getCharacter());
 			else{
-				boolean appear = false;
 				for(int i = 0; i < list.size();i++){
-					if((char)list.get(i) == ch.getCharacter()){
-						System.out.println(list);
-						JOptionPane.showMessageDialog(null, "'"+(char)list.get(i)+ "' is already type, try again");
-						appear = true;
-						
-						count--;
-						break;
+					if((char)list.get(i) ==ch.getCharacter()){
+						JOptionPane.showMessageDialog(null, "'"+ch.getCharacter()+ "' is already type, try again");
+					}else{
+						list.add(ch.getCharacter());
 					}
 				}
-				if(appear == false) list.add(ch.getCharacter());
 				
 			}
 			checkChar test = new checkChar();
@@ -47,7 +40,6 @@ public class test {
 				}
 			}
 			System.out.println();
-			System.out.println("count: "+ count);
 			if(count == newWord.getLength()){
 				System.out.println("Congradualation, you got it.");
 				player1Win++;
@@ -63,21 +55,16 @@ public class test {
 		for(int j=0; j < 10;j++){
 			Player2 ch = new Player2();
 			if(list.isEmpty()){
-				System.out.println("hahha");
 				list.add(ch.getCharacter());
 			}
 			else{
-				boolean appear = false;
 				for(int i = 0; i < list.size();i++){
-					if((char)list.get(i) == ch.getCharacter()){
-						System.out.println(list);
-						JOptionPane.showMessageDialog(null, "'"+(char)list.get(i)+ "' is already type, try again");
-						appear = true;
-						count--;
-						break;
+					if((char)list.get(i) ==ch.getCharacter()){
+						JOptionPane.showMessageDialog(null, "'"+ch.getCharacter()+ "' is already type, try again");
+					}else{
+						list.add(ch.getCharacter());
 					}
 				}
-				if(appear == false) list.add(ch.getCharacter());
 				
 			}
 			checkChar test = new checkChar();

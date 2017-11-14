@@ -23,7 +23,6 @@ public class test {
 						System.out.println(list);
 						JOptionPane.showMessageDialog(null, "'"+(char)list.get(i)+ "' is already type, try again");
 						appear = true;
-						
 						count--;
 						break;
 					}
@@ -47,7 +46,6 @@ public class test {
 				}
 			}
 			System.out.println();
-			System.out.println("count: "+ count);
 			if(count == newWord.getLength()){
 				System.out.println("Congradualation, you got it.");
 				player1Win++;
