@@ -1,0 +1,21 @@
+package DevelopmentExercises.GuessGame;
+import javax.swing.*;
+public class guessGame {
+	private String originWord;
+	public guessGame(){
+		getword();
+	}
+	private void getword(){
+		String input = JOptionPane.showInputDialog(null, "Enter a word to play: ");
+		boolean keepgoing = true;
+		while(keepgoing){
+			if(input == " "){
+				JOptionPane.showConfirmDialog(null, "The message is empty, please try again");
+			}else{
+				originWord = input;
+				keepgoing = false;
+				System.out.println(originWord);
+			}
+		}
+	}
+}

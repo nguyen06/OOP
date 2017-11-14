@@ -1,0 +1,27 @@
+package DevelopmentExercises.GuessGame;
+import java.util.*;
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		guessGame newWord = new guessGame();
+		char[] pos = new char[newWord.getLength()];
+		Player2 ch = new Player2();
+		checkChar test = new checkChar();
+		int result = test.check(newWord, ch);
+		if(result != -1){
+			//store the char into the position array
+			pos[result] = newWord.getChar(result);
+		}
+		for(int i=0; i < newWord.getLength(); i++){
+//			if(pos[i] == ' '){
+//				System.out.print('_');
+//			}else{
+				System.out.print(pos[1]);
+			//}
+		}
+	}
+	
+}
+

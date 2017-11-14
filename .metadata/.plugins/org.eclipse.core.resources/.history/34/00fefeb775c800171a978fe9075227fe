@@ -1,0 +1,21 @@
+package DevelopmentExercises.GuessGame;
+import javax.swing.*;
+public class Player2 {
+	private char getChar;
+	public Player2(){
+		setChar();
+	}
+	private void setChar(){
+		String input = JOptionPane.showInputDialog("Player2: Enter the character: ");
+		boolean keepgoing = true;
+		while(keepgoing){
+			if(input.equals("")){
+				keepgoing = false;
+				JOptionPane.showConfirmDialog(null, "No empty space in word, try again");
+				
+			}else{
+				System.out.println("hahha");
+			}
+		}
+	}
+}

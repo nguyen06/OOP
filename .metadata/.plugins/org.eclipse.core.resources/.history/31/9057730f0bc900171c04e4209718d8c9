@@ -1,0 +1,96 @@
+package DevelopmentExercises.GuessGame;
+import java.util.*;
+
+import javax.swing.JOptionPane;
+public class test {
+	private static int player1Win;
+	private static int player2Win;
+	
+	public static void player1Start(){
+		guessGame newWord = new guessGame();
+		char[] pos = new char[newWord.getLength()];
+		int count = 0;
+		for(int j=0; j < 10;j++){
+			Player2 ch = new Player2();
+			checkChar test = new checkChar();
+			int result = test.check(newWord, ch);
+			if(result != -1){
+				//store the char into the position array
+				pos[result] = newWord.getChar(result);
+				count++;
+				
+			}
+			for(int i=0; i < newWord.getLength(); i++){
+				if(pos[i] == '\0'){
+					System.out.print('_');
+				}else{
+					System.out.print(pos[i]);
+				}
+			}
+			System.out.println();
+			if(count == newWord.getLength()){
+				System.out.println("Congradualation, you got it.");
+				player1Win++;
+				break;
+			}
+		}
+	}
+	public static void player2Start(){
+		guessGame newWord = new guessGame();
+		char[] pos = new char[newWord.getLength()];
+		int count = 0;
+		for(int j=0; j < 10;j++){
+			Player2 ch = new Player2();
+			checkChar test = new checkChar();
+			int result = test.check(newWord, ch);
+			if(result != -1){
+				//store the char into the position array
+				pos[result] = newWord.getChar(result);
+				count++;
+				
+			}
+			for(int i=0; i < newWord.getLength(); i++){
+				if(pos[i] == '\0'){
+					System.out.print('_');
+				}else{
+					System.out.print(pos[i]);
+				}
+			}
+			System.out.println();
+			if(count == newWord.getLength()){
+				System.out.println("Congradualation, you got it.");
+				player2Win++;
+				break;
+			}
+		}
+	}
+	public static void summary(){
+		System.out.println("Player 1 win: "+ player1Win + " and player 2 win: " + player2Win);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		while(true){
+			String input = JOptionPane.showInputDialog(null,"How player first (1 or 2) and 0 is end game: ");
+			int inp =0;
+			try{
+				inp = Integer.parseInt(input);
+			}catch(NumberFormatException e){
+				JOptionPane.showMessageDialog(null, "'"+input+ "' is invalid\n"+"Please enter digits 0 or 2 only");
+			}
+			if(inp == 1) player1Start();
+			else if(inp == 2) player2Start();
+			else if(inp == 0){
+				System.out.println("Thank you for playing the game. Here is your summary");
+				break;
+			}
+			else{
+				JOptionPane.showMessageDialog(null, "'"+input+ "' is invalid\n"+"Please enter digits 0, 1, 2 only");
+				continue;
+			}
+		}
+	
+	}
+	
+}
+

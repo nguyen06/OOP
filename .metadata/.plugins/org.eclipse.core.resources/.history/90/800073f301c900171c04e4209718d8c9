@@ -1,0 +1,15 @@
+package DevelopmentExercises.GuessGame;
+import java.util.*;
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		guessGame newWord = new guessGame();
+		Player2 ch = new Player2();
+		checkChar test = new checkChar();
+		int result = test.check(newWord, ch);
+		System.out.println(result);
+	}
+	
+}
+

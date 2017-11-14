@@ -1,0 +1,12 @@
+package DevelopmentExercises.GuessGame;
+import java.util.*;
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		guessGame newWord = new guessGame();
+		System.out.println(newWord.getWord());
+	}
+	
+}
+

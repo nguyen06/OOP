@@ -1,0 +1,51 @@
+package DevelopmentExercises.GuessGame;
+import java.util.*;
+
+import javax.swing.JOptionPane;
+public class test {
+	public void player1Start(){
+		guessGame newWord = new guessGame();
+		char[] pos = new char[newWord.getLength()];
+		int count = 0;
+		for(int j=0; j < 10;j++){
+			Player2 ch = new Player2();
+			checkChar test = new checkChar();
+			int result = test.check(newWord, ch);
+			if(result != -1){
+				//store the char into the position array
+				pos[result] = newWord.getChar(result);
+				count++;
+				
+			}
+			for(int i=0; i < newWord.getLength(); i++){
+				if(pos[i] == '\0'){
+					System.out.print('_');
+				}else{
+					System.out.print(pos[i]);
+				}
+			}
+			System.out.println();
+			if(count == newWord.getLength()){
+				System.out.println("Congradualation, you got it.");
+				break;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String input = JOptionPane.showInputDialog(null,"How player first (1 or 2): ");
+		try{
+			int inp = Integer.parseInt(input);
+		}catch(NumberFormatException e){
+			JOptionPane.showMessageDialog(null, "'"+input+ "' is invalid\n"+"Please enter digits 0 or 2 only");
+		}
+		
+			player1Start();
+	
+		
+	
+	}
+	
+}
+

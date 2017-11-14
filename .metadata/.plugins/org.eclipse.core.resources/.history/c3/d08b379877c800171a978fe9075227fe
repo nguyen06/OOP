@@ -1,0 +1,10 @@
+package DevelopmentExercises.GuessGame;
+
+public class checkChar {
+	private boolean isAppear;
+	public boolean check(Object player1, Object player2){
+		guessGame player2Word = (guessGame) player1;
+		
+		return true;
+	}
+}
